@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/connected_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:padding="16dp">
+
+
+        <!--parent layout start-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+
+
+            <!--row1-->
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/button_sync_time">
+
+                <Spinner
+                    android:id="@+id/spinnerSensorSelect"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnSetSensor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Set Sensor" />
+
+            </LinearLayout>
+
+            <!--row2-->
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="385dp"
+                android:layout_height="67dp"
+                android:layout_below="@id/linearLayout3"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <AutoCompleteTextView
+                    android:id="@+id/valueDropdown"
+                    android:layout_width="248dp"
+                    android:layout_height="49dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:focusable="false"
+                    android:hint="Tx power"
+                    android:inputType="none"
+                    android:padding="16dp"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/writeButton"
+                    android:layout_width="129dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:text="SET TX " />
+
+            </LinearLayout>
+
+            <!--row3-->
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="383dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout3"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/minute_input"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/writeButton"
+                    android:layout_weight="1"
+                    android:hint="Minutes"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/second_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Seconds"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/write_delay_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="0dp"
+                    android:text="Set Delay" />
+            </LinearLayout>
+
+            <!--row4-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout2">
+
+                <EditText
+                    android:id="@+id/editSleepSeconds"
+                    android:layout_width="296dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Recording Interval (sec)"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/btnSetSleep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Set" />
+
+            </LinearLayout>
+
+            <!--row5-->
+
+
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save">
+
+            </Button>
+
+
+        </LinearLayout> <!--parent layout end-->
+
+
+    </RelativeLayout>
+</ScrollView>

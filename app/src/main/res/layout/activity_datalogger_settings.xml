@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/connected_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:padding="16dp">
+
+
+        <!--parent layout start-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button_restart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#FF9800"
+                android:text="Reboot"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/button_sync_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/button_restart"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#3F51B5"
+                android:text="Sync Current Time"
+                android:textColor="#FFFFFF" />
+
+
+            <!--row1-->
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/button_sync_time">
+
+                <Spinner
+                    android:id="@+id/spinnerSensorSelect"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnSetSensor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Set Sensor" />
+
+            </LinearLayout>
+
+            <!--row2-->
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="385dp"
+                android:layout_height="67dp"
+                android:layout_below="@id/linearLayout3"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <AutoCompleteTextView
+                    android:id="@+id/valueDropdown"
+                    android:layout_width="248dp"
+                    android:layout_height="49dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:focusable="false"
+                    android:hint="Tx power"
+                    android:inputType="none"
+                    android:padding="16dp"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/writeButton"
+                    android:layout_width="129dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:text="SET TX " />
+
+            </LinearLayout>
+
+            <!--row3-->
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="383dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout3"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/minute_input"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/writeButton"
+                    android:layout_weight="1"
+                    android:hint="Minutes"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/second_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Seconds"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/write_delay_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="0dp"
+                    android:text="Set Delay" />
+            </LinearLayout>
+
+            <!--row4-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout2">
+
+                <EditText
+                    android:id="@+id/editSleepSeconds"
+                    android:layout_width="296dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Recording Interval (sec)"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/btnSetSleep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Set" />
+
+            </LinearLayout>
+
+            <!--row5-->
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tempRangeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperature Range: Not Set"
+                    android:textSize="18sp"
+                    android:paddingBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/minTempInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Min Temp (-20 to 60)"
+                    android:inputType="numberSigned" />
+
+                <EditText
+                    android:id="@+id/maxTempInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Max Temp (-20 to 60)"
+                    android:inputType="numberSigned" />
+
+                <Button
+                    android:id="@+id/applyTempButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apply Temperature Range"
+                    android:layout_marginTop="12dp" />
+            </LinearLayout>
+
+            <!--row6-->
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tempRange2TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperature Range: Not Set"
+                    android:textSize="18sp"
+                    android:paddingBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/minTempTHInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Min Temp (-20 to 60)"
+                    android:inputType="numberSigned" />
+
+                <EditText
+                    android:id="@+id/maxTempTHInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Max Temp (-20 to 60)"
+                    android:inputType="numberSigned" />
+
+                <Button
+                    android:id="@+id/applyTemp2Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apply Temperature Range"
+                    android:layout_marginTop="12dp" />
+            </LinearLayout>
+
+
+            <!--row7-->
+
+            <!--row8-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/HumdRangeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="16dp"
+                    android:text="Humidity Range: Not Set"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/minHumdInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Min Temp (-20 to 60)"
+                    android:inputType="numberSigned" />
+
+                <EditText
+                    android:id="@+id/maxHumdInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Max Temp (-20 to 60)"
+                    android:inputType="numberSigned" />
+
+                <Button
+                    android:id="@+id/applyHumdButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Apply Humidity Range" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout2">
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save">
+
+            </Button>
+
+
+        </LinearLayout> <!--parent layout end-->
+
+
+    </RelativeLayout>
+</ScrollView>
